@@ -1,5 +1,11 @@
 pipeline {
-
+  parameters {
+      booleanParam(name: 'Refresh',
+                  defaultValue: false,
+                  description: 'Read Jenkinsfile and exit.')
+  }
+  
+  
   environment {
     registry = "192.168.1.152:5000/k4mrul/myweb"
     dockerImage = ""
@@ -8,6 +14,15 @@ pipeline {
   agent any
 
   stages {
+    
+    stage('Read Jenkinsfile') {
+        when {
+            expression { return params.Refresh == true }
+        }
+        steps {
+          echo("stop")
+        }
+    }
 
     stage('Checkout Source') {
       steps {
