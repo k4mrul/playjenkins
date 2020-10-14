@@ -16,8 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: 192.168.1.152:5000/k4mrul/myweb:latest
-      #- image: 192.168.1.152:5000/k4mrul/myweb:<build-no>
+      - image: 192.168.1.152:5000/k4mrul/myweb:1
         imagePullPolicy: Always
         name: myweb
 
