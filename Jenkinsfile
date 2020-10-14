@@ -1,7 +1,7 @@
 pipeline {
   parameters {
       booleanParam(name: 'Refresh',
-                  defaultValue: false,
+                  defaultValue: true,
                   description: 'Read Jenkinsfile and exit.')
   }
   
